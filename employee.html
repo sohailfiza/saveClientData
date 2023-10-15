@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            font-style: monospace;
+        }
+
+        body,
+        h1,
+        table {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 10px;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+            color: #14213d;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 10px;
+            font-size: 5em;
+            font-weight: bold;
+            border: 5px solid #023047;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            color: #001d3d;
+            font-weight: bold;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #14213d;
+            color: #fca311;
+        }
+
+        tr:nth-child(even) {
+            background-color: #d8f3dc;
+        }
+
+        #admin {
+            background-color: rgb(255, 255, 98);
+        }
+
+        button {
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            font-size: 1.4em;
+            font-weight: 900;
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #004b23;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transition: all .1s ease;
+            box-shadow: 0 0 0 2px #003049;
+        }
+
+        button:active {
+            background-color: #fdf0d5;
+            color: #780000;
+        }
+
+        .showSalary {
+            font-weight: bolder;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Employee Management System</h1>
+
+    <table style="width:100%">
+        <tr>
+            <th>Serial Number</th>
+            <th>Name</th>
+            <th> Employee ID</th>
+            <th>State</th>
+            <th>Designation</th>
+            <th>Salary (Rs.)</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td class="showName"></td>
+            <td class="empID"></td>
+            <td class="empState"></td>
+            <td class="designation"></td>
+            <td class="showSalary"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td class="showName"></td>
+            <td class="empID"></td>
+            <td class="empState"></td>
+            <td class="designation"></td>
+            <td class="showSalary"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td class="showName"></td>
+            <td class="empID"></td>
+            <td class="empState"></td>
+            <td class="designation"></td>
+            <td class="showSalary"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td class="showName"></td>
+            <td class="empID"></td>
+            <td class="empState"></td>
+            <td class="designation"></td>
+            <td class="showSalary"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td class="showName"></td>
+            <td class="empID"></td>
+            <td class="empState"></td>
+            <td class="designation"></td>
+            <td class="showSalary"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td class="showName"></td>
+            <td class="empID"></td>
+            <td class="empState"></td>
+            <td class="designation"></td>
+            <td class="showSalary"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td class="showName"></td>
+            <td class="empID"></td>
+            <td class="empState"></td>
+            <td class="designation"></td>
+            <td class="showSalary"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td class="showName"></td>
+            <td class="empID"></td>
+            <td class="empState"></td>
+            <td class="designation"></td>
+            <td class="showSalary"></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td class="showName"></td>
+            <td class="empID"></td>
+            <td class="empState"></td>
+            <td class="designation"></td>
+            <td class="showSalary"></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td class="showName"></td>
+            <td class="empID"></td>
+            <td class="empState"></td>
+            <td class="designation"></td>
+            <td class="showSalary"></td>
+        </tr>
+
+    </table>
+    <button onclick="displaySalary(); sendDataToServer();">Click</button>
+    <script>
+
+        var employeeData = [
+            {
+                name: "MD SOHAIL",
+                employeeId: "21066",
+                state: "Dream Land",
+                designation: "ADMINISTRATOR",
+                salary: 5096
+            },
+            {name: "IFFAT",employeeId: "21067",state: "BIHAR",designation: "WEB DEVELOPER",salary: 5202},
+            {name: "NANCY",employeeId: "20278",state: "HARYANA",designation: "DATABASE DEVELOPER",salary: 9757},
+            {name: "AKSHITA",employeeId: "20279",state: "UTTAR PRADESH",designation: "ANDROID DEVELOPER",salary: 5592},
+            {name: "AMAR",employeeId: "20296",state: "BIHAR",designation: "MANAGER",salary: 3480},
+            {name: "Gaurav",employeeId: "DUMY-DATA-1",state: "COLORFUL",designation: "DEVELOPER",salary: 3751},
+            {name: "Saket",employeeId: "DUMY-DATA-2",state: "COLORFUL",designation: "DEVELOPER",salary: 7268},
+            {name: "Adil",employeeId: "DUMY-DATA-3",state: "COLORFUL",designation: "DEVELOPER",salary: 4343 },
+            {name: "Gopal",employeeId: "DUMY-DATA-4",state: "COLORFUL",designation: "DEVELOPER",salary: 5083},
+            {name: "Ayush",employeeId: "DUMY-DATA-5",state: "COLORFUL", designation: "DEVELOPER",salary: 6595}
+        ];
+
+        var names = [];
+        var employeeIDs = [];
+        var states = [];
+        var designations = [];
+        var salary = [];
+
+        for (var i = 0; i < employeeData.length; i++) {
+            names.push(employeeData[i].name);
+            employeeIDs.push(employeeData[i].employeeId);
+            states.push(employeeData[i].state);
+            designations.push(employeeData[i].designation);
+            salary.push(employeeData[i].salary)
+        }
+
+        function populateTable() {
+            var nameCells = document.getElementsByClassName("showName");
+            var employeeIDCells = document.getElementsByClassName("empID");
+            var stateCells = document.getElementsByClassName("empState");
+            var designationCells = document.getElementsByClassName("designation");
+            // var salaryCells = document.getElementsByClassName("showSalary");
+
+            for (var i = 0; i < employeeData.length; i++) {
+                nameCells[i].textContent = names[i];
+                employeeIDCells[i].textContent = employeeIDs[i];
+                stateCells[i].textContent = states[i];
+                designationCells[i].textContent = designations[i];
+                // salaryCells[i].textContent = salary[i];
+            }
+        }
+        window.addEventListener("load", populateTable);
+
+
+        function displaySalary() {
+            var arr = [5096, 5202, 9757, 5592, 3480, 3751, 7268, 4343, 5083, 6595];
+            var numberDisplay = document.getElementsByClassName("showSalary");
+            for (var i = 0; i < numberDisplay.length; i++) {
+                numberDisplay[i].innerHTML = arr[i];
+            }
+        }
+
+        function sendDataToServer() {
+            const url = 'http://localhost:3000/employeeData';
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(employeeData),
+            };
+
+            fetch(url, options)
+                .then((response) => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw new Error('Failed to send data to the server');
+                    }
+                })
+                .then((data) => {
+                    console.log(data); // Server response
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        }
+
+    </script>
+</body>
+
+</html>
